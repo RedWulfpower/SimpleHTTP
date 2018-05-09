@@ -1,0 +1,7 @@
+C:\Users\fclaus\Desktop\test\SimpleHTTP\bin\Debug\SimpleHTTP.exe.config
+C:\Users\fclaus\Desktop\test\SimpleHTTP\bin\Debug\SimpleHTTP.exe
+C:\Users\fclaus\Desktop\test\SimpleHTTP\bin\Debug\SimpleHTTP.pdb
+C:\Users\fclaus\Desktop\test\SimpleHTTP\obj\Debug\SimpleHTTP.csprojResolveAssemblyReference.cache
+C:\Users\fclaus\Desktop\test\SimpleHTTP\obj\Debug\SimpleHTTP.csproj.CoreCompileInputs.cache
+C:\Users\fclaus\Desktop\test\SimpleHTTP\obj\Debug\SimpleHTTP.exe
+C:\Users\fclaus\Desktop\test\SimpleHTTP\obj\Debug\SimpleHTTP.pdb
