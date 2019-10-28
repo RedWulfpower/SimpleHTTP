@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
-using System.Threading;
-using System.Diagnostics;
 
 namespace SimpleHTTP
 {
@@ -88,7 +84,6 @@ namespace SimpleHTTP
         {".zip", "application/zip"},
         #endregion
     };
-    private Thread _serverThread;
     private string _rootDirectory;
     private HttpListener _listener;
     private int _port;
@@ -133,7 +128,6 @@ namespace SimpleHTTP
     /// </summary>
     public void Stop()
     {
-      _serverThread.Abort();
       _listener.Stop();
     }
 
@@ -142,7 +136,7 @@ namespace SimpleHTTP
       _listener = new HttpListener();
       _listener.Prefixes.Add("http://127.0.0.1:" + _port.ToString() + "/");
       _listener.Start();
-      while (true)
+      while (_listener.IsListening)
       {
         try
         {
@@ -216,8 +210,8 @@ namespace SimpleHTTP
     {
       this._rootDirectory = path;
       this._port = port;
-      _serverThread = new Thread(this.Listen);
-      _serverThread.Start();
+
+      Listen();
     }
 
 

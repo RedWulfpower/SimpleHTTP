@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleHTTP
 {
@@ -14,21 +10,24 @@ namespace SimpleHTTP
       SimpleHTTPServer myServer = null;
       if (args.Length == 2)
       {
+        Console.WriteLine("Server is running on this port: " + args[1]);
+        Console.WriteLine("Server Root: " + args[0]);
+
         myServer = new SimpleHTTPServer(args[0], Convert.ToInt32(args[1]));
       }
-      if (args.Length == 1)
+      else if (args.Length == 1)
       {
+        Console.WriteLine("Server is running on this port: " + args[0]);
+        Console.WriteLine("Server Root: " + Directory.GetCurrentDirectory());
+
         myServer = new SimpleHTTPServer(Directory.GetCurrentDirectory(), Convert.ToInt32(args[0]));
       }
-
-
-      Console.WriteLine("Server is running on this port: " + myServer.Port.ToString());
-      Console.WriteLine("Server Root: " + myServer.RootDirectory);
-
-
-      while (true)
+      else
       {
+        Console.WriteLine("Server is running on this port: " + "8080");
+        Console.WriteLine("Server Root: " + Directory.GetCurrentDirectory());
 
+        myServer = new SimpleHTTPServer(Directory.GetCurrentDirectory(), 8080);
       }
       //Console.WriteLine("Server is stoping ");
 
